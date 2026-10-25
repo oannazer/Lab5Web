@@ -7,14 +7,14 @@ console.log("Hello World");
 // }
 
 // Latihan 2 - Alert dan Prompt
-// const namaPengguna = prompt("Masukkan nama Anda:", "");
-// if (namaPengguna && namaPengguna.trim() !== "") {
-// 	alert("Halo, " + namaPengguna + "!");
-// 	document.getElementById("pesan").textContent =
-// 		"Selamat datang, " + namaPengguna + ".";
-// } else {
-// 	alert("Nama belum diisi.");
-// }
+const namaPengguna = prompt("Masukkan nama Anda:", "");
+if (namaPengguna && namaPengguna.trim() !== "") {
+	alert("Halo, " + namaPengguna + "!");
+	document.getElementById("pesan").textContent =
+		"Selamat datang, " + namaPengguna + ".";
+} else {
+	alert("Nama belum diisi.");
+}
 
 // Latihan 3 -  Function dan operasi aritmatika
 function operasiDasar(a, b) {
@@ -27,43 +27,43 @@ function operasiDasar(a, b) {
 operasiDasar(9, 4);
 
 // Latihan 4 - Seleksi kondisi if-else
-// const inputNilai = prompt("Masukkan nilai (0–100):");
-// const nilaiMahasiswa = Number(inputNilai);
-// if (
-// 	inputNilai === null ||
-// 	inputNilai.trim() === "" ||
-// 	Number.isNaN(nilaiMahasiswa) ||
-// 	nilaiMahasiswa < 0 ||
-// 	nilaiMahasiswa > 100
-// ) {
-// 	alert("Input nilai tidak valid.");
-// } else if (nilaiMahasiswa >= 60) {
-// 	alert(nilaiMahasiswa + " : Anda Lulus");
-// } else {
-// 	alert(nilaiMahasiswa + " : Anda Belum lulus");
-// }
+const inputNilai = prompt("Masukkan nilai (0–100):");
+const nilaiMahasiswa = Number(inputNilai);
+if (
+	inputNilai === null ||
+	inputNilai.trim() === "" ||
+	Number.isNaN(nilaiMahasiswa) ||
+	nilaiMahasiswa < 0 ||
+	nilaiMahasiswa > 100
+) {
+	alert("Input nilai tidak valid.");
+} else if (nilaiMahasiswa >= 60) {
+	alert(nilaiMahasiswa + " : Anda Lulus");
+} else {
+	alert(nilaiMahasiswa + " : Anda Belum lulus");
+}
 
 // Latihan 5 - Seleksi kondisi switch
-// const inputPilihan = prompt("Masukkan angka 1–5:");
-// switch (inputPilihan) {
-// 	case "1":
-// 		alert(inputPilihan + " : Bilangan satu");
-// 		break;
-// 	case "2":
-// 		alert(inputPilihan + " : Bilangan dua");
-// 		break;
-// 	case "3":
-// 		alert(inputPilihan + " : Bilangan tiga");
-// 		break;
-// 	case "4":
-// 		alert(inputPilihan + " : Bilangan empat");
-// 		break;
-// 	case "5":
-// 		alert(inputPilihan + " : Bilangan lima");
-// 		break;
-// 	default:
-// 		alert(inputPilihan + " : Pilihan tidak tersedia");
-// }
+const inputPilihan = prompt("Masukkan angka 1–5:");
+switch (inputPilihan) {
+	case "1":
+		alert(inputPilihan + " : Bilangan satu");
+		break;
+	case "2":
+		alert(inputPilihan + " : Bilangan dua");
+		break;
+	case "3":
+		alert(inputPilihan + " : Bilangan tiga");
+		break;
+	case "4":
+		alert(inputPilihan + " : Bilangan empat");
+		break;
+	case "5":
+		alert(inputPilihan + " : Bilangan lima");
+		break;
+	default:
+		alert(inputPilihan + " : Pilihan tidak tersedia");
+}
 
 // Latihan 6 - Form bilangan genap atau ganjil
 function cekBilangan() {
