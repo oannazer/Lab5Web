@@ -17,14 +17,14 @@ console.log("Hello World");
 // }
 
 // Latihan 3 -  Function dan operasi aritmatika
-// function operasiDasar(a, b) {
-// 	console.log("Penjumlahan:", a + b);
-// 	console.log("Pengurangan:", a - b);
-// 	console.log("Perkalian:", a * b);
-// 	console.log("Pembagian:", b !== 0 ? a / b : "Tidak dapat dibagi nol");
-// 	console.log("Modulus:", a % b);
-// }
-// operasiDasar(9, 4);
+function operasiDasar(a, b) {
+	console.log("Penjumlahan:", a + b);
+	console.log("Pengurangan:", a - b);
+	console.log("Perkalian:", a * b);
+	console.log("Pembagian:", b !== 0 ? a / b : "Tidak dapat dibagi nol");
+	console.log("Modulus:", a % b);
+}
+operasiDasar(9, 4);
 
 // Latihan 4 - Seleksi kondisi if-else
 // const inputNilai = prompt("Masukkan nilai (0–100):");
@@ -38,31 +38,31 @@ console.log("Hello World");
 // ) {
 // 	alert("Input nilai tidak valid.");
 // } else if (nilaiMahasiswa >= 60) {
-// 	alert("Lulus");
+// 	alert(nilaiMahasiswa + " : Anda Lulus");
 // } else {
-// 	alert("Belum lulus");
+// 	alert(nilaiMahasiswa + " : Anda Belum lulus");
 // }
 
 // Latihan 5 - Seleksi kondisi switch
 // const inputPilihan = prompt("Masukkan angka 1–5:");
 // switch (inputPilihan) {
 // 	case "1":
-// 		alert("Bilangan satu");
+// 		alert(inputPilihan + " : Bilangan satu");
 // 		break;
 // 	case "2":
-// 		alert("Bilangan dua");
+// 		alert(inputPilihan + " : Bilangan dua");
 // 		break;
 // 	case "3":
-// 		alert("Bilangan tiga");
+// 		alert(inputPilihan + " : Bilangan tiga");
 // 		break;
 // 	case "4":
-// 		alert("Bilangan empat");
+// 		alert(inputPilihan + " : Bilangan empat");
 // 		break;
 // 	case "5":
-// 		alert("Bilangan lima");
+// 		alert(inputPilihan + " : Bilangan lima");
 // 		break;
 // 	default:
-// 		alert("Pilihan tidak tersedia");
+// 		alert(inputPilihan + " : Pilihan tidak tersedia");
 // }
 
 // Latihan 6 - Form bilangan genap atau ganjil
@@ -109,18 +109,13 @@ function tentukanPredikat(nilai) {
 	return "E";
 }
 
-let tugas = 0;
-let uts = 0;
-let uas = 0;
+let tugas = 85;
+let uts = 75;
+let uas = 88;
 const akhir = hitungNilaiAkhir(tugas, uts, uas);
 console.log("Nilai akhir:", akhir.toFixed(2));
 console.log("Predikat:", tentukanPredikat(akhir));
 console.log("Status:", akhir >= 60 ? "Lulus" : "Belum lulus");
-
-let total = 0;
-for (let i = 1; i <= 10; i++) {
-	console.log(7 * i);
-}
 
 // Fungsi tambahan untuk memproses form kalkulator nilai mahasiswa secara interaktif
 function prosesHitungNilai() {

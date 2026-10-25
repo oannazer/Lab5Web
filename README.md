@@ -111,9 +111,9 @@ if (
 ) {
 	alert("Input nilai tidak valid.");
 } else if (nilaiMahasiswa >= 60) {
-	alert("Lulus");
+	alert(nilaiMahasiswa + " : Anda Lulus");
 } else {
-	alert("Belum lulus");
+	alert(nilaiMahasiswa + " : Anda Belum lulus");
 }
 ```
 
@@ -130,22 +130,22 @@ if (
 const inputPilihan = prompt("Masukkan angka 1–5:");
 switch (inputPilihan) {
 	case "1":
-		alert("Bilangan satu");
+		alert(inputPilihan + " : Bilangan satu");
 		break;
 	case "2":
-		alert("Bilangan dua");
+		alert(inputPilihan + " : Bilangan dua");
 		break;
 	case "3":
-		alert("Bilangan tiga");
+		alert(inputPilihan + " : Bilangan tiga");
 		break;
 	case "4":
-		alert("Bilangan empat");
+		alert(inputPilihan + " : Bilangan empat");
 		break;
 	case "5":
-		alert("Bilangan lima");
+		alert(inputPilihan + " : Bilangan lima");
 		break;
 	default:
-		alert("Pilihan tidak tersedia");
+		alert(inputPilihan + " : Pilihan tidak tersedia");
 }
 ```
 
@@ -200,9 +200,13 @@ function cekBilangan() {
 Tambahkan tiga tombol pada `index.html`.
 
 ```html
-<button type="button" onclick="ubahWarnaLatar('lightgreen')">Latar Hijau</button>
+<button type="button" onclick="ubahWarnaLatar('lightgreen')">
+	Latar Hijau
+</button>
 <button type="button" onclick="ubahWarnaLatar('white')">Latar Putih</button>
-<button type="button" onclick="ubahWarnaLatar('lightyellow')">Latar Kuning</button>
+<button type="button" onclick="ubahWarnaLatar('lightyellow')">
+	Latar Kuning
+</button>
 ```
 
 Tambahkan function berikut pada `script.js`.
@@ -226,13 +230,14 @@ Tambahkan daftar menu dengan checkbox pada `index.html`.
 ```html
 <h3>Daftar Menu Makanan</h3>
 <label
-	><input type="checkbox" class="menu" value="5000" /> Ayam Goreng — Rp5.000</label
+	><input type="checkbox" class="menu" value="5000" /> Ayam Goreng —
+	Rp5.000</label
+><br />
+<label><input type="checkbox" class="menu" value="500" /> Tempe — Rp500</label
 ><br />
 <label
-	><input type="checkbox" class="menu" value="500" /> Tempe — Rp500</label
-><br />
-<label
-	><input type="checkbox" class="menu" value="2500" /> Telur Dadar — Rp2.500</label
+	><input type="checkbox" class="menu" value="2500" /> Telur Dadar —
+	Rp2.500</label
 ><br />
 <p>Total: Rp<span id="total">0</span></p>
 ```
@@ -297,22 +302,7 @@ console.log("Status:", akhir >= 60 ? "Lulus" : "Belum lulus");
 
 ![Screenshot screenshot-9](screenshots/screenshot-9.png)
 
-#### 10. Perulangan for
-
-```javascript
-for (let i = 1; i <= 10; i++) {
-	console.log(7 * i);
-}
-```
-
-- `let i = 1`: Inisialisasi variabel penghitung mulai dari 1.
-- `i <= 10`: Perulangan berjalan selama `i` kurang dari atau sama dengan 10.
-- `i++`: Menambah nilai `i` sebesar 1 pada setiap putaran.
-- `console.log(7 * i)`: Menampilkan perkalian 7 dari 1 sampai 10, yaitu `7`, `14`, `21`, hingga `70`.
-
-![Screenshot screenshot-10](screenshots/screenshot-10.png)
-
-#### 11. Membuat form Kalkulator Nilai Mahasiswa
+#### 10. Membuat form Kalkulator Nilai Mahasiswa
 
 Tambahkan form berikut pada `index.html`, sebelum tag `<script>`.
 
@@ -400,4 +390,4 @@ function prosesHitungNilai() {
 - `alert(containerHasil.textContent)`: Menampilkan hasil yang sama dalam bentuk kotak pesan.
 
 Hasil akhir:
-![Screenshot screenshot-11](screenshots/screenshot-11.png)
+![Screenshot screenshot-10](screenshots/screenshot-10.png)
