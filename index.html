@@ -37,21 +37,25 @@
 		><br />
 		<p>Total: Rp<span id="total">0</span></p>
 
-		<table border="1">
-			<thead>
-				<tr>
-					<th colspan="3">Nilai Mahasiswa</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th>Mata Kuliah</th>
-					<th>UAS</th>
-					<th>UTS</th>
-				</tr>
-				<tr></tr>
-			</tbody>
-		</table>
+		<!-- Tambahan Form Kalkulator Nilai Mahasiswa -->
+		<hr style="margin: 30px 0" />
+		<h3>Kalkulator Nilai Mahasiswa</h3>
+		<div style="margin-bottom: 10px">
+			<label for="inputTugas">Nilai Tugas (0-100):</label><br />
+			<input type="number" id="inputTugas" min="0" max="100" />
+		</div>
+		<div style="margin-bottom: 10px">
+			<label for="inputUts">Nilai UTS (0-100):</label><br />
+			<input type="number" id="inputUts" min="0" max="100" />
+		</div>
+		<div style="margin-bottom: 10px">
+			<label for="inputUas">Nilai UAS (0-100):</label><br />
+			<input type="number" id="inputUas" min="0" max="100" />
+		</div>
+		<button type="button" onclick="prosesHitungNilai()">
+			Hitung Nilai Mahasiswa
+		</button>
+		<div id="hasilMahasiswa" style="margin-top: 15px; font-weight: bold"></div>
 		<script src="script.js"></script>
 	</body>
 </html>

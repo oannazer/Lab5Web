@@ -1,9 +1,22 @@
 document.getElementById("pesan").textContent = "Hello World";
 console.log("Hello World");
+// Latihan 1 -  Menampilkan output
 // const namaPengguna = prompt("Masukkan nama Anda:", "");
 // if (namaPengguna && namaPengguna.trim() !== "") {
 // 	alert("Halo, " + namaPengguna + "!");
 // }
+
+// Latihan 2 - Alert dan Prompt
+// const namaPengguna = prompt("Masukkan nama Anda:", "");
+// if (namaPengguna && namaPengguna.trim() !== "") {
+// 	alert("Halo, " + namaPengguna + "!");
+// 	document.getElementById("pesan").textContent =
+// 		"Selamat datang, " + namaPengguna + ".";
+// } else {
+// 	alert("Nama belum diisi.");
+// }
+
+// Latihan 3 -  Function dan operasi aritmatika
 // function operasiDasar(a, b) {
 // 	console.log("Penjumlahan:", a + b);
 // 	console.log("Pengurangan:", a - b);
@@ -13,6 +26,7 @@ console.log("Hello World");
 // }
 // operasiDasar(9, 4);
 
+// Latihan 4 - Seleksi kondisi if-else
 // const inputNilai = prompt("Masukkan nilai (0–100):");
 // const nilaiMahasiswa = Number(inputNilai);
 // if (
@@ -29,6 +43,7 @@ console.log("Hello World");
 // 	alert("Belum lulus");
 // }
 
+// Latihan 5 - Seleksi kondisi switch
 // const inputPilihan = prompt("Masukkan angka 1–5:");
 // switch (inputPilihan) {
 // 	case "1":
@@ -50,6 +65,7 @@ console.log("Hello World");
 // 		alert("Pilihan tidak tersedia");
 // }
 
+// Latihan 6 - Form bilangan genap atau ganjil
 function cekBilangan() {
 	const input = document.getElementById("bilangan").value;
 	const angka = Number(input);
@@ -63,10 +79,12 @@ function cekBilangan() {
 	}
 }
 
+// Latihan 7 - Mengubah warna halaman
 function ubahWarnaLatar(warna) {
 	document.body.style.backgroundColor = warna;
 }
 
+// Latihan 8 - DOM dan Checkbox menu makanan
 const daftarMenu = document.querySelectorAll(".menu");
 daftarMenu.forEach((item) => {
 	item.addEventListener("change", hitungTotal);
@@ -79,6 +97,7 @@ function hitungTotal() {
 	document.getElementById("total").textContent = total.toLocaleString("id-ID");
 }
 
+// Mini project - Kalkulator Nilai Mahasiswa
 function hitungNilaiAkhir(tugas, uts, uas) {
 	return tugas * 0.3 + uts * 0.3 + uas * 0.4;
 }
@@ -90,9 +109,9 @@ function tentukanPredikat(nilai) {
 	return "E";
 }
 
-let tugas = prompt("Masukkan nilai tugas : ");
-let uts = prompt("Masukkan nilai tugas : ");
-let uas = prompt("Masukkan nilai tugas : ");
+let tugas = 0;
+let uts = 0;
+let uas = 0;
 const akhir = hitungNilaiAkhir(tugas, uts, uas);
 console.log("Nilai akhir:", akhir.toFixed(2));
 console.log("Predikat:", tentukanPredikat(akhir));
@@ -101,4 +120,54 @@ console.log("Status:", akhir >= 60 ? "Lulus" : "Belum lulus");
 let total = 0;
 for (let i = 1; i <= 10; i++) {
 	console.log(7 * i);
+}
+
+// Fungsi tambahan untuk memproses form kalkulator nilai mahasiswa secara interaktif
+function prosesHitungNilai() {
+	const valTugas = document.getElementById("inputTugas").value;
+	const valUts = document.getElementById("inputUts").value;
+	const valUas = document.getElementById("inputUas").value;
+	const containerHasil = document.getElementById("hasilMahasiswa");
+
+	// Validasi kosong atau tidak valid
+	if (valTugas.trim() === "" || valUts.trim() === "" || valUas.trim() === "") {
+		alert("Semua kolom nilai wajib diisi!");
+		containerHasil.textContent = "";
+		return;
+	}
+
+	const t = Number(valTugas);
+	const u = Number(valUts);
+	const a = Number(valUas);
+
+	// Validasi rentang 0 - 100
+	if (
+		t < 0 ||
+		t > 100 ||
+		u < 0 ||
+		u > 100 ||
+		a < 0 ||
+		a > 100 ||
+		Number.isNaN(t) ||
+		Number.isNaN(u) ||
+		Number.isNaN(a)
+	) {
+		alert(
+			"Validasi Gagal: Nilai harus berupa angka di antara rentang 0 sampai 100!",
+		);
+		containerHasil.textContent = "";
+		return;
+	}
+
+	const akhirVal = hitungNilaiAkhir(t, u, a);
+	const predikatVal = tentukanPredikat(akhirVal);
+	const statusVal = akhirVal >= 60 ? "Lulus" : "Belum lulus";
+
+	// Tampilkan hasil ke elemen HTML
+	containerHasil.innerHTML = `
+        Nilai Akhir: ${akhirVal.toFixed(2)} <br>
+        Predikat: ${predikatVal} <br>
+        Status: ${statusVal}
+    `;
+	alert(containerHasil.textContent);
 }
